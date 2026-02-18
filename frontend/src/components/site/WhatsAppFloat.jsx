@@ -15,7 +15,7 @@ export const WhatsAppFloat = ({ phone, message, onOpen }) => {
         e.preventDefault();
         onOpen(phone, message);
       }}
-      className="fixed bottom-20 right-5 z-[60] group"
+      className="fixed bottom-5 right-5 z-[60] group"
       aria-label="Chat WhatsApp"
     >
       <div className="relative">

@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import { WhatsAppFloat } from "../components/site/WhatsAppFloat";
 import { cn } from "../lib/utils";
+import logo from "../assets/logo.png";
 
 const buildWaLinks = (phone, message) => {
   const encoded = encodeURIComponent(message || "Hello");
@@ -177,8 +178,12 @@ const SiteNav = ({ activeId }) => {
             className="flex items-center gap-3"
             aria-label="Kembali ke Home"
           >
-            <div className="h-10 w-10 rounded-2xl bg-white/12 ring-1 ring-white/15 backdrop-blur-[14px] flex items-center justify-center shadow-sm">
-              <div className="h-5 w-5 rounded-lg bg-gradient-to-br from-white/85 to-white/20" />
+            <div className="h-10 flex items-center">
+              <img
+                src={logo}
+                alt="Cening Community"
+                className="h-full w-auto object-contain"
+              />
             </div>
             <div className="leading-tight text-left">
               <div className="text-white font-semibold tracking-tight">
@@ -209,7 +214,7 @@ const SiteNav = ({ activeId }) => {
               onClick={() => scrollToId("contact")}
               className="bg-[#2F6BFF] hover:bg-[#2557DA] text-white shadow-lg shadow-[#2F6BFF]/15"
             >
-              Join Now
+              Let's Connect
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
@@ -254,7 +259,7 @@ const SiteNav = ({ activeId }) => {
                     onClick={() => scrollToId("contact")}
                     className="bg-[#2F6BFF] hover:bg-[#2557DA] text-white"
                   >
-                    Join Now
+                    Meet Founder
                   </Button>
                 </div>
               </SheetContent>
@@ -302,7 +307,7 @@ const Hero = () => {
                   size="lg"
                   className="bg-white text-slate-900 hover:bg-white/90 shadow-xl shadow-slate-950/20"
                 >
-                  Join Now
+                  Kenal Lebih Dekat
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
@@ -311,7 +316,7 @@ const Hero = () => {
                   variant="secondary"
                   className="bg-white/10 text-white hover:bg-white/15 border border-white/15"
                 >
-                  View Activities
+                  Lihat Aktivitas
                   <Camera className="ml-2 h-5 w-5" />
                 </Button>
               </div>
@@ -323,11 +328,11 @@ const Hero = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-white/60" />
-                  <span className="text-sm">Relasi & kolaborasi</span>
+                  <span className="text-sm">Bantu UMKM</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-[#93C5FD]" />
-                  <span className="text-sm">Pengembangan potensi</span>
+                  <span className="text-sm">Literasi Keuangan</span>
                 </div>
               </div>
             </div>
@@ -340,7 +345,7 @@ const Hero = () => {
                   Highlight kegiatan terbaru
                 </div>
                 <p className="mt-1 text-sm text-white/75">
-                  Dokumentasi singkat aktivitas komunitas (placeholder — bisa diganti nanti).
+                  Dokumentasi singkat aktivitas Cening Community.
                 </p>
 
                 <div className="mt-5 grid grid-cols-3 gap-3">
@@ -363,7 +368,7 @@ const Hero = () => {
 
                 <div className="mt-5 flex items-center justify-between">
                   <div className="text-xs text-white/70">
-                    Update rutin • Ajak teman ikut
+                    Yuk lihat semua kegiatan kami!
                   </div>
                   <Button
                     onClick={() => scrollToId("gallery")}
@@ -443,7 +448,7 @@ const About = () => {
                   <img
                     src={images.about}
                     alt="Aktivitas komunitas"
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain p-1"
                     loading="lazy"
                   />
                 </AspectRatio>
@@ -541,12 +546,12 @@ const SpeechSection = () => {
                         desc: "Belajar, berkarya, dan mencoba hal baru dengan support system yang solid.",
                       },
                       {
-                        title: "Kegiatan yang jelas",
-                        desc: "Program sosial dan edukasi yang terencana, bukan sekadar kumpul-kumpul.",
+                        title: "Kegiatan yang inspiratif",
+                        desc: "Program sosial dan edukasi terkait digitalisasi UMKM dan literasi keuangan.",
                       },
                       {
                         title: "Jaringan pertemanan",
-                        desc: "Kenalan dengan orang baru, kolaborasi project, dan bangun relasi positif.",
+                        desc: "Kenalan dengan orang baru, kolaborasi projek, dan bangun relasi positif.",
                       },
                       {
                         title: "Dampak nyata",

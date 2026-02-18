@@ -1,8 +1,8 @@
 /* Site-level styles (keep Tailwind as primary) */
 
 :root {
-    --cc-royal: #2f6bff;
-    --cc-royal-dark: #2557da;
+    --cc-royal: #002277;
+    --cc-royal-dark: #002c9a;
     --cc-sky: #7dd3fc;
 }
 
