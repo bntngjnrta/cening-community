@@ -1,17 +1,20 @@
 import React, { useMemo } from "react";
 import { MessageCircle } from "lucide-react";
 
-export const WhatsAppFloat = ({ phone, message }) => {
+export const WhatsAppFloat = ({ phone, message, onOpen }) => {
   const href = useMemo(() => {
-    const encoded = encodeURIComponent(message || "Hello!");
+    const encoded = encodeURIComponent(message || "Hello");
     return `https://wa.me/${phone}?text=${encoded}`;
   }, [phone, message]);
 
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noreferrer"
+      onClick={(e) => {
+        if (!onOpen) return;
+        e.preventDefault();
+        onOpen(phone, message);
+      }}
       className="fixed bottom-20 right-5 z-[60] group"
       aria-label="Chat WhatsApp"
     >
