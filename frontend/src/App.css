@@ -1,34 +1,46 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Site-level styles (keep Tailwind as primary) */
+
+:root {
+    --cc-royal: #2f6bff;
+    --cc-royal-dark: #2557da;
+    --cc-sky: #7dd3fc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
+/* Scroll reveal (no "transition: all") */
+.reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 600ms ease, transform 600ms ease;
+    will-change: opacity, transform;
+}
+
+.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* WhatsApp pulse */
+@keyframes waPulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.6;
+    }
+    70% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.1);
+        opacity: 0;
     }
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.animate-waPulse {
+    animation: waPulse 1.8s ease-out infinite;
 }
 
-.App-link {
-    color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Improve focus visibility */
+:focus-visible {
+    outline: 2px solid rgba(47, 107, 255, 0.55);
+    outline-offset: 2px;
 }
