@@ -37,7 +37,7 @@ export const images = {
 };
 
 export const galleryImages = [
-  "https://images.unsplash.com/photo-1520975958225-47c0c6e6d8cc?auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=1400&q=80",
   "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1400&q=80",
   "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=80",
   "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=80",
@@ -49,7 +49,7 @@ export const galleryImages = [
 ];
 
 export const instagramFeed = [
-  "https://images.unsplash.com/photo-1520975958225-47c0c6e6d8cc?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1522096823084-2d1aa8411c13?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1528605105345-5344ea20e269?auto=format&fit=crop&w=1200&q=80",

@@ -12,7 +12,7 @@ export const WhatsAppFloat = ({ phone, message }) => {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="fixed bottom-5 right-5 z-[60] group"
+      className="fixed bottom-20 right-5 z-[60] group"
       aria-label="Chat WhatsApp"
     >
       <div className="relative">
