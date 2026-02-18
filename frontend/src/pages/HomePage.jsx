@@ -977,7 +977,7 @@ export default function HomePage() {
       </main>
       <Footer />
 
-      <WhatsAppFloat phone={brand.whatsapp.phone} message={brand.whatsapp.prefilled} />
+      <WhatsAppFloat phone={brand.whatsapp.phone} message={brand.whatsapp.prefilled} onOpen={openWhatsApp} />
     </div>
   );
 }
