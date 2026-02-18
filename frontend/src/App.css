@@ -19,6 +19,12 @@
     transform: translateY(0);
 }
 
+/* If reveal is used inside a wrapper observed with data-reveal */
+[data-reveal].is-revealed .reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* WhatsApp pulse */
 @keyframes waPulse {
     0% {

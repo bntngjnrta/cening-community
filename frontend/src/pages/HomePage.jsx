@@ -73,8 +73,15 @@ const useRevealOnScroll = () => {
       (entries) => {
         for (const e of entries) {
           if (e.isIntersecting) {
-            e.target.classList.add("is-revealed");
-            obs.unobserve(e.target);
+            const target = e.target;
+            target.classList.add("is-revealed");
+
+            // Support wrappers: if the observer is attached to a parent (data-reveal),
+            // reveal nested elements too.
+            const nested = target.querySelectorAll?.(".reveal");
+            if (nested?.length) nested.forEach((n) => n.classList.add("is-revealed"));
+
+            obs.unobserve(target);
           }
         }
       },
