@@ -27,6 +27,38 @@ import {
 import { WhatsAppFloat } from "../components/site/WhatsAppFloat";
 import { cn } from "../lib/utils";
 
+const buildWaLinks = (phone, message) => {
+  const encoded = encodeURIComponent(message || "Hello");
+  return {
+    app: `whatsapp://send?phone=${phone}&text=${encoded}`,
+    waMe: `https://wa.me/${phone}?text=${encoded}`,
+    web: `https://web.whatsapp.com/send?phone=${phone}&text=${encoded}`,
+  };
+};
+
+const openWhatsApp = (phone, message) => {
+  const { app, waMe, web } = buildWaLinks(phone, message);
+  const ua = navigator?.userAgent || "";
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(ua);
+
+  // Try native app on mobile (most reliable), then fall back to wa.me
+  if (isMobile) {
+    window.location.href = app;
+    window.setTimeout(() => {
+      const w = window.open(waMe, "_blank", "noopener,noreferrer");
+      if (!w) window.location.href = waMe;
+    }, 650);
+    return;
+  }
+
+  // Desktop: try WhatsApp Web first, then fall back to wa.me
+  const w = window.open(web, "_blank", "noopener,noreferrer");
+  if (!w) {
+    const w2 = window.open(waMe, "_blank", "noopener,noreferrer");
+    if (!w2) window.location.href = waMe;
+  }
+};
+
 const iconMap = {
   graduation: GraduationCap,
   handshake: Handshake,
@@ -720,12 +752,9 @@ const InstagramSection = () => {
               </p>
 
               <div className="mt-6">
-                <Button
-                  asChild
-                  className="bg-[#2F6BFF] hover:bg-[#2557DA] text-white"
-                >
+                <Button asChild className="bg-[#2F6BFF] hover:bg-[#2557DA] text-white">
                   <a href={brand.instagram.url} target="_blank" rel="noreferrer">
-                    Follow Us on Instagram
+                    Open Instagram
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
@@ -790,20 +819,12 @@ const CTA = () => {
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Button
-                  asChild
                   size="lg"
+                  onClick={() => openWhatsApp(brand.whatsapp.phone, brand.whatsapp.prefilled)}
                   className="bg-[#2F6BFF] hover:bg-[#2557DA] text-white shadow-xl shadow-[#2F6BFF]/20"
                 >
-                  <a
-                    href={`https://wa.me/${brand.whatsapp.phone}?text=${encodeURIComponent(
-                      brand.whatsapp.prefilled
-                    )}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Contact Us Now
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
+                  Contact Us Now
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
 
                 <Button

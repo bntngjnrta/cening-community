@@ -5,13 +5,12 @@ export const brand = {
   tagline:
     "Komunitas anak muda yang aktif, kreatif, dan berdampak — tempat bertumbuh bareng.",
   instagram: {
-    username: "@ceningcommunity",
-    url: "https://instagram.com/ceningcommunity",
+    username: "@cening_bergerak",
+    url: "https://instagram.com/cening_bergerak",
   },
   whatsapp: {
     phone: "6281529171016",
-    prefilled:
-      "Hello Cening Community, I am interested in joining.",
+    prefilled: "Hello Cening Community",
   },
 };
 
