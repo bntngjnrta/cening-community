@@ -16,6 +16,12 @@ import kegiatan9 from "./assets/kegiatan9.jpg";
 import kegiatan10 from "./assets/kegiatan10.jpg";
 import kegiatan11 from "./assets/kegiatan11.jpg";
 import kegiatan12 from "./assets/kegiatan12.jpg";
+import kegiatan13 from "./assets/kegiatan13.jpg";
+import kegiatan14 from "./assets/kegiatan14.jpg";
+import kegiatan15 from "./assets/kegiatan15.jpg";
+import kegiatan16 from "./assets/kegiatan16.jpg";
+import kegiatan17 from "./assets/kegiatan17.jpg";
+import kegiatan18 from "./assets/kegiatan18.jpg";
 import instagram1 from "./assets/ourMascot.jpg";
 import instagram2 from "./assets/ourIdea.jpg";
 import instagram3 from "./assets/ourLogo.jpg";
@@ -54,67 +60,114 @@ export const images = {
   speechCoFounder: coFounderImg,
 };
 
-
 export const galleryImages = [
   {
     src: kegiatan1,
-    alt: "Kegiatan 1",
-    description: "Sesi pelatihan literasi digital bersama peserta dalam suasana diskusi yang interaktif dan kolaboratif."
+    alt: "KAMU, UANG, DAN MASA DEPAN #1",
+    longDescription:
+      "[Rabu, 14 Januari 2026] Kamu, Uang, dan Masa Depan #1 hadir menyapa teman-teman di SMP Negeri 2 Mengwi dengan materi menarik seputar literasi keuangan bagi generasi muda. Melalui sesi interaktif, peserta diajak memahami pentingnya mengelola uang sejak dini sebagai bekal untuk meraih masa depan."
   },
   {
     src: kegiatan2,
-    alt: "Kegiatan 2",
-    description: "Dialog santai bersama pelaku UMKM untuk menggali tantangan dan peluang pengembangan usaha."
+    alt: "Cening Care #1",
+    longDescription: 
+      "[Selasa, 23 Desember 2025] Cening Care #1 menyasar UMKM Bamboo Corner Handicraft di Desa Sidetapa. Kami menggali permasalahan yang dihadapi, mulai dari digital marketing yang belum optimal hingga keterbatasan literasi dan pencatatan keuangan sehingga perlu pendampingan agar pengelolaannya lebih terstruktur."
   },
   {
     src: kegiatan3,
-    alt: "Kegiatan 3",
-    description: "Kunjungan lapangan dan silaturahmi bersama mitra lokal untuk memperkuat kolaborasi program."
+    alt: "Cening Care #2",
+    longDescription: 
+      "[Sabtu, 3 Januari 2026] Cening Care #2 menyasar UMKM Indra Sokasi di Desa Tigawasa (Buleleng) melalui wawancara langsung untuk mengidentifikasi tantangan usaha yang dihadapi. Fokus pembahasan meliputi penguatan strategi digital marketing serta peningkatan literasi dan pencatatan keuangan guna mendukung pengelolaan usaha yang lebih profesional dan berkelanjutan."
   },
   {
     src: kegiatan4,
-    alt: "Kegiatan 4",
-    description: "Presentasi materi strategi pemasaran kepada peserta dalam sesi kelas intensif."
+    alt: "KAMU, UANG, DAN MASA DEPAN #1",
+    longDescription:
+      "[Rabu, 14 Januari 2026] Kamu, Uang, dan Masa Depan #1 hadir menyapa teman-teman di SMP Negeri 2 Mengwi dengan materi menarik seputar literasi keuangan bagi generasi muda. Melalui sesi interaktif, peserta diajak memahami pentingnya mengelola uang sejak dini sebagai bekal untuk meraih masa depan."
   },
   {
     src: kegiatan5,
-    alt: "Kegiatan 5",
-    description: "Pendampingan langsung kepada pelaku usaha dalam mengembangkan produk dan branding."
+    alt: "Cening Care #2",
+    longDescription: 
+      "[Sabtu, 3 Januari 2026] Cening Care #2 menyasar UMKM Indra Sokasi di Desa Tigawasa (Buleleng) melalui wawancara langsung untuk mengidentifikasi tantangan usaha yang dihadapi. Fokus pembahasan meliputi penguatan strategi digital marketing serta peningkatan literasi dan pencatatan keuangan guna mendukung pengelolaan usaha yang lebih profesional dan berkelanjutan."
   },
   {
     src: kegiatan6,
-    alt: "Kegiatan 6",
-    description: "Sesi berbagi inspirasi dan motivasi bersama generasi muda untuk membangun semangat kewirausahaan."
+    alt: "Cening Care #1",
+    longDescription: 
+      "[Selasa, 23 Desember 2025] Cening Care #1 menyasar UMKM Bamboo Corner Handicraft di Desa Sidetapa. Kami menggali permasalahan yang dihadapi, mulai dari digital marketing yang belum optimal hingga keterbatasan literasi dan pencatatan keuangan sehingga perlu pendampingan agar pengelolaannya lebih terstruktur."
   },
   {
     src: kegiatan7,
-    alt: "Kegiatan 7",
-    description: "Eksplorasi produk lokal sebagai bagian dari penguatan potensi ekonomi kreatif masyarakat."
+    alt: "Cening Care #1",
+    longDescription: 
+      "[Selasa, 23 Desember 2025] Cening Care #1 menyasar UMKM Bamboo Corner Handicraft di Desa Sidetapa. Kami menggali permasalahan yang dihadapi, mulai dari digital marketing yang belum optimal hingga keterbatasan literasi dan pencatatan keuangan sehingga perlu pendampingan agar pengelolaannya lebih terstruktur."
   },
   {
     src: kegiatan8,
-    alt: "Kegiatan 8",
-    description: "Proses praktik pembuatan produk kerajinan sebagai bentuk pelatihan keterampilan peserta."
+    alt: "Cening Care #2",
+    longDescription: 
+      "[Sabtu, 3 Januari 2026] Cening Care #2 menyasar UMKM Indra Sokasi di Desa Tigawasa (Buleleng) melalui wawancara langsung untuk mengidentifikasi tantangan usaha yang dihadapi. Fokus pembahasan meliputi penguatan strategi digital marketing serta peningkatan literasi dan pencatatan keuangan guna mendukung pengelolaan usaha yang lebih profesional dan berkelanjutan."
   },
   {
     src: kegiatan9,
-    alt: "Kegiatan 9",
-    description: "Suasana kelas edukasi digital marketing dengan partisipasi aktif para peserta."
+    alt: "KAMU, UANG, DAN MASA DEPAN #1",
+    longDescription:
+      "[Rabu, 14 Januari 2026] Kamu, Uang, dan Masa Depan #1 hadir menyapa teman-teman di SMP Negeri 2 Mengwi dengan materi menarik seputar literasi keuangan bagi generasi muda. Melalui sesi interaktif, peserta diajak memahami pentingnya mengelola uang sejak dini sebagai bekal untuk meraih masa depan."
   },
   {
     src: kegiatan10,
-    alt: "Kegiatan 10",
-    description: "Kebersamaan bersama siswa dalam program penguatan literasi dan kreativitas."
+    alt: "Light UP #1",
+    longDescription: 
+      "[1 Juli - 1 September 2024] Light UP merupakan program pengabdian masyarakat unggulan yang memfasilitasi mahasiswa untuk berkontribusi langsung melalui berbagai proyek sosial dan lingkungan. Program ini berlandaskan pada tiga pilar utama: Peduli, Sinergi, dan Kontribusi. Kami hadir langsung dalam program “Barengkok Education” yang merupakan inisiatif pendidikan bagi anak-anak SMP kelas jauh di Desa Barengkok yang belum mendapatkan akses pendidikan yang optimal."
   },
   {
     src: kegiatan11,
-    alt: "Kegiatan 11",
-    description: "Foto bersama peserta dan tim setelah pelaksanaan kegiatan pemberdayaan masyarakat."
+    alt: "Light UP #2",
+    longDescription: 
+      "[1 Juli - 1 September 2024] Light UP merupakan program pengabdian masyarakat unggulan yang memfasilitasi mahasiswa untuk berkontribusi langsung melalui berbagai proyek sosial dan lingkungan. Program ini berlandaskan pada tiga pilar utama: Peduli, Sinergi, dan Kontribusi. Kami hadir langsung dalam program “Barengkok Education” yang merupakan inisiatif pendidikan bagi anak-anak SMP kelas jauh di Desa Barengkok yang belum mendapatkan akses pendidikan yang optimal."
   },
   {
     src: kegiatan12,
-    alt: "Kegiatan 12",
-    description: "Momen kolaborasi dan refleksi bersama komunitas usai rangkaian program selesai dilaksanakan."
+    alt: "Light UP #3",
+    longDescription: 
+      "[1 Juli - 1 September 2024] Light UP merupakan program pengabdian masyarakat unggulan yang memfasilitasi mahasiswa untuk berkontribusi langsung melalui berbagai proyek sosial dan lingkungan. Program ini berlandaskan pada tiga pilar utama: Peduli, Sinergi, dan Kontribusi. Kami hadir langsung dalam program “Barengkok Education” yang merupakan inisiatif pendidikan bagi anak-anak SMP kelas jauh di Desa Barengkok yang belum mendapatkan akses pendidikan yang optimal."
+  },
+    {
+    src: kegiatan13,
+    alt: "Cening Care #3",
+    longDescription: 
+      "[17 November 2024] Kami menyasar UMKM Mamamatcha. Kegiatan ini merupakan survei lapangan yang dilakukan kepada pelaku UMKM untuk memahami praktik pencatatan keuangan yang selama ini diterapkan dalam operasional usaha mereka. Melalui wawancara langsung dan pengisian instrumen survei, tim menggali informasi terkait pencatatan pemasukan dan pengeluaran, pemisahan keuangan pribadi dan usaha, perhitungan laba-rugi, hingga kendala yang dihadapi dalam pembukuan."
+  },
+    {
+    src: kegiatan14,
+    alt: "Cening Care #3",
+    longDescription: 
+      "[17 November 2024] Kami menyasar UMKM Mamamatcha. Kegiatan ini merupakan survei lapangan yang dilakukan kepada pelaku UMKM untuk memahami praktik pencatatan keuangan yang selama ini diterapkan dalam operasional usaha mereka. Melalui wawancara langsung dan pengisian instrumen survei, tim menggali informasi terkait pencatatan pemasukan dan pengeluaran, pemisahan keuangan pribadi dan usaha, perhitungan laba-rugi, hingga kendala yang dihadapi dalam pembukuan."
+  },
+    {
+    src: kegiatan15,
+    alt: "Kelas Ceria #1",
+    longDescription: 
+      "[19 Juli 2024] Kegiatan ini merupakan program pembelajaran yang ditujukan bagi siswa SD kelas 1–3 dengan fokus pada penguatan kemampuan dasar matematika serta pengenalan literasi keuangan sejak dini. Anak-anak diajak memahami pentingnya mengatur uang jajan dengan bijak. Melalui pendekatan yang interaktif dan menyenangkan seperti permainan, simulasi belanja, serta cerita edukatif, siswa belajar membedakan antara kebutuhan dan keinginan, serta memahami konsep menabung untuk mencapai tujuan tertentu."
+  },
+    {
+    src: kegiatan16,
+    alt: "Kelas Ceria #1",
+    longDescription: 
+      "[19 Juli 2024] Kegiatan ini merupakan program pembelajaran yang ditujukan bagi siswa SD kelas 1–3 dengan fokus pada penguatan kemampuan dasar matematika serta pengenalan literasi keuangan sejak dini. Anak-anak diajak memahami pentingnya mengatur uang jajan dengan bijak. Melalui pendekatan yang interaktif dan menyenangkan seperti permainan, simulasi belanja, serta cerita edukatif, siswa belajar membedakan antara kebutuhan dan keinginan, serta memahami konsep menabung untuk mencapai tujuan tertentu."
+  },
+    {
+    src: kegiatan18,
+    alt: "Kelas Ceria #2",
+    longDescription: 
+      "[29 Oktober 2025] Dalam kegiatan ini, anak-anak diajak memahami konsep matematika dasar seperti operasi hitung sederhana dan pengenalan nilai mata uang melalui simulasi situasi nyata, seperti aktivitas jual-beli dan pengelolaan uang jajan. Selain penguatan numerasi, siswa juga dikenalkan pada prinsip dasar pengelolaan keuangan sederhana. Mereka belajar menyisihkan sebagian uang jajan untuk ditabung, memahami arti prioritas, serta membangun kebiasaan membuat keputusan yang bijak sebelum membeli sesuatu."
+  },
+  {
+    src: kegiatan17,
+    alt: "Cening Care #4",
+    longDescription: 
+      "[20 Desember 2024] Kegiatan ini menyasar UMKM Rumah Makan Bali yang merupakan proses pengumpulan data langsung dari pelaku UMKM guna mengidentifikasi pola pengelolaan keuangan usaha yang sedang berjalan. Melalui wawancara terstruktur dan observasi singkat, tim mengevaluasi bagaimana pelaku usaha mencatat transaksi harian, mengelola arus kas, serta menghitung keuntungan usaha."
   },
 ];
 
