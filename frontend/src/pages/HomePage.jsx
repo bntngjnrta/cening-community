@@ -1,4 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import background from "../assets/backgroundPutih.jpg";
+import speechBg from "../assets/bgFounder.jpg";
+import bgIgSection from "../assets/bgIgSection.jpg";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -182,7 +185,7 @@ const NavLink = ({ id, label, active, onClick }) => {
 const SiteNav = ({ activeId }) => {
   return (
     <div className="sticky top-0 z-50">
-      <div className="absolute inset-0 h-[76px] bg-gradient-to-b from-slate-950/55 to-slate-950/20 backdrop-blur-[18px]" />
+      <div className="absolute inset-0 h-[76px] bg-[#0b3f8c] backdrop-blur-md" />
       <Container className="relative">
         <div className="h-[76px] flex items-center justify-between">
           <button
@@ -400,7 +403,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 sm:py-24 bg-white">
+    <section id="about" className="py-20 sm:py-24 bg-white/80">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
@@ -418,13 +421,18 @@ const About = () => {
                 {features.map((item) => (
                   <Card
                     key={item.title}
-                    className="rounded-2xl border-slate-200 shadow-sm hover:shadow-md transition-shadow"
+                    className="
+                      rounded-2xl border-slate-200 shadow-sm 
+                      transition-all duration-300
+                      hover:bg-[#2F6BFF] hover:text-white hover:shadow-lg
+                      group
+                    "
                   >
                     <div className="p-5">
-                      <div className="text-sm font-semibold text-slate-900">
+                      <div className="text-sm font-semibold text-slate-900 group-hover:text-white">
                         {item.title}
                       </div>
-                      <div className="mt-1 text-sm text-slate-600">
+                      <div className="mt-1 text-sm text-slate-600 group-hover:text-white/90">
                         {item.description}
                       </div>
                     </div>
@@ -475,8 +483,16 @@ const About = () => {
 
 const SpeechSection = () => {
   return (
-    <section id="speech" className="py-20 sm:py-24 bg-slate-50">
-      <Container>
+    <section
+      id="speech"
+      className="py-20 sm:py-24 bg-cover bg-center relative"
+      style={{ backgroundImage: `url(${speechBg})` }}
+    >
+
+      {/* overlay supaya teks terbaca */}
+      <div className="absolute inset-0 bg-white/80 "></div>
+
+      <Container className="relative">
         {/* HEADER */}
         <div className="mb-10">
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
@@ -683,7 +699,7 @@ const SpeechSection = () => {
 
 const VisionMission = () => {
   return (
-    <section id="vision" className="py-20 sm:py-24 bg-white">
+    <section id="vision" className="py-20 sm:py-24 bg-white/80">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-5" data-reveal>
@@ -695,14 +711,14 @@ const VisionMission = () => {
                 Bagian ini menjelaskan arah dan tujuan komunitas, meliputi visi yang ingin dicapai serta misi sebagai langkah strategis untuk mewujudkannya.
               </p>
 
-              <Card className="mt-7 rounded-3xl border-slate-200 shadow-sm">
-                <div className="p-7">
-                  <div className="text-sm text-slate-500">Visi</div>
-                  <div className="mt-2 text-lg font-semibold text-slate-900 leading-snug">
-                    Menjadi komunitas penggerak bagi generasi muda dan UMKM untuk tumbuh, berinovasi, berkelanjutan dan bersaing di tingkat global.
-                  </div>
+            <Card className="mt-7 rounded-3xl border-slate-200 shadow-sm transition-all duration-300 hover:bg-[#2F6BFF] hover:text-white hover:shadow-lg group">
+              <div className="p-7">
+                <div className="text-sm text-slate-500 group-hover:text-white/80">Visi</div>
+                <div className="mt-2 text-lg font-semibold text-slate-900 leading-snug group-hover:text-white">
+                  Menjadi komunitas penggerak bagi generasi muda dan UMKM untuk tumbuh, berinovasi, berkelanjutan dan bersaing di tingkat global.
                 </div>
-              </Card>
+              </div>
+            </Card>
             </div>
           </div>
 
@@ -714,18 +730,25 @@ const VisionMission = () => {
                   return (
                     <Card
                       key={m.title}
-                      className="rounded-3xl border-slate-200 shadow-sm hover:shadow-md transition-shadow"
+                      className="
+                        rounded-3xl border-slate-200 shadow-sm 
+                        transition-all duration-300
+                        hover:bg-[#2F6BFF] hover:text-white hover:shadow-lg
+                        group
+                      "
                     >
                       <div className="p-6">
                         <div className="flex items-start gap-4">
-                          <div className="h-11 w-11 rounded-2xl bg-[#2F6BFF]/10 ring-1 ring-[#2F6BFF]/15 flex items-center justify-center shrink-0">
-                            <Icon className="h-5 w-5 text-[#2F6BFF]" />
-                          </div>
+                        <div className="h-11 w-11 rounded-2xl bg-[#2F6BFF]/10 ring-1 ring-[#2F6BFF]/15 flex items-center justify-center shrink-0 group-hover:bg-white/20">
+                          <Icon className="h-5 w-5 text-[#2F6BFF] group-hover:text-white" />
+                        </div>
                           <div>
-                            <div className="font-semibold text-slate-900">{m.title}</div>
-                            <div className="mt-2 text-sm text-slate-600 leading-relaxed">
-                              {m.description}
-                            </div>
+                          <div className="font-semibold text-slate-900 group-hover:text-white">
+                            {m.title}
+                          </div>
+                          <div className="mt-2 text-sm text-slate-600 leading-relaxed group-hover:text-white/90">
+                            {m.description}
+                          </div>
                           </div>
                         </div>
                       </div>
@@ -756,7 +779,7 @@ const Gallery = () => {
   );
 
   return (
-    <section id="gallery" className="py-20 sm:py-24 bg-white">
+    <section id="gallery" className="py-20 sm:py-24 bg-white/80">
       <Container>
         {/* HEADER */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
@@ -779,11 +802,14 @@ const Gallery = () => {
               className="cursor-pointer group relative rounded-2xl overflow-hidden border-slate-200 shadow-sm hover:shadow-lg transition-all duration-500"
             >
               <AspectRatio ratio={4 / 3}>
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  className="h-full w-full object-cover transition-all duration-700 group-hover:scale-105"
-                />
+              <img
+                src={item.src}
+                alt={item.alt}
+                className="h-full w-full object-cover 
+                grayscale group-hover:grayscale-0
+                transition-all duration-700 
+                group-hover:scale-105"
+              />
               </AspectRatio>
             </Card>
           ))}
@@ -797,7 +823,7 @@ const Gallery = () => {
               disabled={currentPage === 1}
               onClick={() => setCurrentPage((prev) => prev - 1)}
             >
-              Sebelumnya
+              ⬅️
             </Button>
 
             <span className="text-sm text-slate-600">
@@ -809,7 +835,7 @@ const Gallery = () => {
               disabled={currentPage === totalPages}
               onClick={() => setCurrentPage((prev) => prev + 1)}
             >
-              Selanjutnya
+              ➡️
             </Button>
           </div>
         )}
@@ -846,8 +872,16 @@ const Gallery = () => {
 
 const InstagramSection = () => {
   return (
-    <section id="instagram" className="py-20 sm:py-24 bg-slate-50">
-      <Container>
+    <section
+      id="instagram"
+      className="py-20 sm:py-24 bg-cover bg-center relative"
+      style={{ backgroundImage: `url(${bgIgSection})` }}
+    >
+
+      {/* overlay */}
+      <div className="absolute inset-0 bg-white/80"></div>
+
+      <Container className="relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-4" data-reveal>
             <div className="reveal">
@@ -1067,7 +1101,14 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+      <div
+        className="min-h-screen"
+        style={{
+          backgroundImage: `url(${background})`,
+          backgroundRepeat: "repeat",
+          backgroundSize: "auto",
+        }}
+      >
       <div ref={topPadRef} />
       <SiteNav activeId={activeId} />
       <main>
