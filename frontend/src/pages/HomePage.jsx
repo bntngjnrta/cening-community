@@ -10,12 +10,25 @@ import {
 } from "../components/ui/navigation-menu";
 import { Button } from "../components/ui/button";
 import { Card } from "../components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../components/ui/tabs";
 import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet";
 import { Separator } from "../components/ui/separator";
 import { AspectRatio } from "../components/ui/aspect-ratio";
 import { Badge } from "../components/ui/badge";
-import { brand, galleryImages, images, instagramFeed, mission, navLinks, speech } from "../mock";
+import {
+  brand,
+  galleryImages,
+  images,
+  instagramFeed,
+  mission,
+  navLinks,
+  speech,
+} from "../mock";
 import {
   ArrowRight,
   Camera,
@@ -35,11 +48,7 @@ import { cn } from "../lib/utils";
 import logo from "../assets/logo.png";
 import maskot from "../assets/maskot.png";
 import { ArrowDown } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-} from "../components/ui/dialog";
-
+import { Dialog, DialogContent } from "../components/ui/dialog";
 
 const buildWaLinks = (phone, message) => {
   const encoded = encodeURIComponent(message || "Hello");
@@ -55,7 +64,6 @@ const openWhatsApp = (phone, message) => {
   const ua = navigator?.userAgent || "";
   const isMobile = /Android|iPhone|iPad|iPod/i.test(ua);
 
-  // Try native app on mobile (most reliable), then fall back to wa.me
   if (isMobile) {
     window.location.href = app;
     window.setTimeout(() => {
@@ -65,7 +73,6 @@ const openWhatsApp = (phone, message) => {
     return;
   }
 
-  // Desktop: try WhatsApp Web first, then fall back to wa.me
   const w = window.open(web, "_blank", "noopener,noreferrer");
   if (!w) {
     const w2 = window.open(waMe, "_blank", "noopener,noreferrer");
@@ -87,23 +94,23 @@ const useActiveSection = (ids) => {
   const [active, setActive] = useState(ids?.[0] || "home");
 
   useEffect(() => {
-    const els = ids
-      .map((id) => document.getElementById(id))
-      .filter(Boolean);
+    const els = ids.map((id) => document.getElementById(id)).filter(Boolean);
     if (!els.length) return;
 
     const obs = new IntersectionObserver(
       (entries) => {
         const visible = entries
           .filter((e) => e.isIntersecting)
-          .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0));
+          .sort(
+            (a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0),
+          );
         if (visible[0]?.target?.id) setActive(visible[0].target.id);
       },
       {
         root: null,
         rootMargin: "-25% 0px -65% 0px",
         threshold: [0.1, 0.2, 0.35, 0.5],
-      }
+      },
     );
 
     els.forEach((el) => obs.observe(el));
@@ -125,16 +132,15 @@ const useRevealOnScroll = () => {
             const target = e.target;
             target.classList.add("is-revealed");
 
-            // Support wrappers: if the observer is attached to a parent (data-reveal),
-            // reveal nested elements too.
             const nested = target.querySelectorAll?.(".reveal");
-            if (nested?.length) nested.forEach((n) => n.classList.add("is-revealed"));
+            if (nested?.length)
+              nested.forEach((n) => n.classList.add("is-revealed"));
 
             obs.unobserve(target);
           }
         }
       },
-      { threshold: 0.12 }
+      { threshold: 0.12 },
     );
 
     els.forEach((el) => obs.observe(el));
@@ -149,7 +155,9 @@ const scrollToId = (id) => {
 };
 
 const Container = ({ children, className }) => (
-  <div className={cn("mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8", className)}>
+  <div
+    className={cn("mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8", className)}
+  >
     {children}
   </div>
 );
@@ -165,7 +173,7 @@ const NavLink = ({ id, label, active, onClick }) => {
           className={cn(
             "relative px-3 py-2 text-sm font-medium rounded-full transition-colors",
             "hover:bg-white/10 hover:text-white",
-            isActive ? "text-white" : "text-white/80"
+            isActive ? "text-white" : "text-white/80",
           )}
         >
           {label}
@@ -173,7 +181,7 @@ const NavLink = ({ id, label, active, onClick }) => {
             className={cn(
               "pointer-events-none absolute left-3 right-3 -bottom-0.5 h-px rounded-full",
               "transition-opacity",
-              isActive ? "opacity-100 bg-white/80" : "opacity-0 bg-white/70"
+              isActive ? "opacity-100 bg-white/80" : "opacity-0 bg-white/70",
             )}
           />
         </button>
@@ -255,13 +263,12 @@ const SiteNav = ({ activeId }) => {
                       type="button"
                       onClick={() => {
                         scrollToId(l.id);
-                        // Close sheet by clicking overlay: Radix closes on focus loss; this is fine.
                       }}
                       className={cn(
                         "w-full text-left px-3 py-2 rounded-xl transition-colors",
                         activeId === l.id
                           ? "bg-slate-900 text-white"
-                          : "hover:bg-slate-100 text-slate-800"
+                          : "hover:bg-slate-100 text-slate-800",
                       )}
                     >
                       <span className="inline-flex items-center justify-between w-full">
@@ -299,7 +306,6 @@ const Hero = () => {
         }}
       />
 
-      {/* overlay + subtle noise */}
       <div className="absolute inset-0 bg-[#0A2B7A]/70" />
       <div className="absolute inset-0 opacity-[0.07] mix-blend-overlay bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.45)_1px,transparent_0)] [background-size:20px_20px]" />
 
@@ -318,20 +324,20 @@ const Hero = () => {
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Button
-                asChild
-                size="lg"
-                className="bg-white text-slate-900 hover:bg-white/90 shadow-xl shadow-slate-950/20"
-              >
-                <a
-                  href="https://drive.google.com/uc?export=download&id=1sAu5JUA14nllDN3YwjbQXhK2aWooITsX"
-                  target="_blank"
-                  rel="noreferrer"
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-white text-slate-900 hover:bg-white/90 shadow-xl shadow-slate-950/20"
                 >
-                  Unduh Profil Komunitas
-                  <ArrowDown className="ml-2 h-5 w-5" />
-                </a>
-              </Button>
+                  <a
+                    href="https://drive.google.com/uc?export=download&id=1sAu5JUA14nllDN3YwjbQXhK2aWooITsX"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Unduh Profil Komunitas
+                    <ArrowDown className="ml-2 h-5 w-5" />
+                  </a>
+                </Button>
                 <Button
                   onClick={() => scrollToId("gallery")}
                   size="lg"
@@ -359,20 +365,20 @@ const Hero = () => {
               </div>
             </div>
           </div>
-            <div className="lg:col-span-5 relative">
-              <div className="lg:col-span-5 relative hidden lg:flex items-end justify-end">
-                <img
-                  src={maskot}
-                  alt="Maskot Cening Community"
-                  className="
+          <div className="lg:col-span-5 relative">
+            <div className="lg:col-span-5 relative hidden lg:flex items-end justify-end">
+              <img
+                src={maskot}
+                alt="Maskot Cening Community"
+                className="
                     w-[800px]
                     max-h-screen
                     object-contain
                   "
-                />
-              </div>
+              />
             </div>
           </div>
+        </div>
       </Container>
     </section>
   );
@@ -383,38 +389,36 @@ const About = () => {
     {
       title: "Kegiatan Rutin",
       description:
-        "Pelatihan berkala untuk meningkatkan kapasitas UMKM dan generasi muda."
+        "Pelatihan berkala untuk meningkatkan kapasitas UMKM dan generasi muda.",
     },
     {
       title: "Kolaborasi Terbuka",
       description:
-        "Kerja sama dengan berbagai pihak untuk memperluas dampak bersama."
+        "Kerja sama dengan berbagai pihak untuk memperluas dampak bersama.",
     },
     {
       title: "Mentoring & Sharing",
-      description:
-        "Mentoring program digital marketing dan keuangan."
+      description: "Mentoring program digital marketing dan keuangan.",
     },
     {
       title: "Dampak Nyata",
-      description:
-        "Fokus pada hasil terukur bagi UMKM dan generasi muda."
-    }
+      description: "Fokus pada hasil terukur bagi UMKM dan generasi muda.",
+    },
   ];
 
   return (
     <section id="about" className="py-20 sm:py-24 bg-white/80">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
-          {/* LEFT CONTENT */}
           <div className="lg:col-span-6">
             <div data-reveal className="reveal">
               <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
                 Tentang {brand.name}
               </h2>
               <p className="mt-4 text-slate-600 leading-relaxed">
-                Cening Community adalah komunitas kolaboratif yang bergerak di bidang bisnis, pariwisata, dan marketing.
+                Cening Community adalah komunitas kolaboratif yang bergerak di
+                bidang pengembangan UMKM, literasi keuangan, ide dan model
+                bisnis, kewirausahaan, manajemen, branding dan marketing.
               </p>
 
               <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -459,7 +463,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* RIGHT IMAGE (TIDAK DIHAPUS) */}
           <div className="lg:col-span-6">
             <div data-reveal className="reveal">
               <Card className="rounded-3xl overflow-hidden border-slate-200 shadow-xl">
@@ -474,7 +477,6 @@ const About = () => {
               </Card>
             </div>
           </div>
-
         </div>
       </Container>
     </section>
@@ -488,12 +490,9 @@ const SpeechSection = () => {
       className="py-20 sm:py-24 bg-cover bg-center relative"
       style={{ backgroundImage: `url(${speechBg})` }}
     >
-
-      {/* overlay supaya teks terbaca */}
       <div className="absolute inset-0 bg-white/80 "></div>
 
       <Container className="relative">
-        {/* HEADER */}
         <div className="mb-10">
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
             Sapa Founder
@@ -504,12 +503,8 @@ const SpeechSection = () => {
         </div>
 
         <Tabs defaultValue="founder">
-
-          {/* ================= FOUNDER ================= */}
           <TabsContent value="founder">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-
-              {/* FOTO + TAB */}
               <div className="lg:col-span-4">
                 <Card className="rounded-3xl overflow-hidden shadow-lg border-0">
                   <AspectRatio ratio={3 / 4}>
@@ -530,7 +525,6 @@ const SpeechSection = () => {
                   </div>
                 </Card>
 
-                {/* TAB DI BAWAH FOTO */}
                 <TabsList className="mt-6 bg-slate-200 rounded-full p-1 w-full">
                   <TabsTrigger
                     value="founder"
@@ -547,11 +541,9 @@ const SpeechSection = () => {
                 </TabsList>
               </div>
 
-              {/* CARD KANAN */}
               <div className="lg:col-span-8">
                 <Card className="rounded-3xl shadow-lg border-0">
                   <div className="p-10">
-
                     <div className="flex items-center gap-3 mb-6">
                       <div className="h-11 w-11 rounded-2xl bg-[#2F6BFF]/10 flex items-center justify-center">
                         <Sparkles className="h-5 w-5 text-[#2F6BFF]" />
@@ -572,7 +564,6 @@ const SpeechSection = () => {
                       {speech.founder.message}
                     </div>
 
-                    {/* CTA DI DALAM CARD */}
                     <div className="rounded-2xl bg-gradient-to-r from-[#2F6BFF] to-[#2557DA] p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6">
                       <div>
                         <h3 className="text-base sm:text-lg font-semibold">
@@ -592,17 +583,14 @@ const SpeechSection = () => {
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </div>
-
                   </div>
                 </Card>
               </div>
             </div>
           </TabsContent>
 
-          {/* ================= CO-FOUNDER ================= */}
           <TabsContent value="cofounder">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-
               <div className="lg:col-span-4">
                 <Card className="rounded-3xl overflow-hidden shadow-lg border-0">
                   <AspectRatio ratio={3 / 4}>
@@ -613,7 +601,9 @@ const SpeechSection = () => {
                     />
                   </AspectRatio>
                   <div className="p-5 bg-white">
-                    <div className="text-sm text-slate-500">Secretary & Treasurer</div>
+                    <div className="text-sm text-slate-500">
+                      Secretary & Treasurer
+                    </div>
                     <div className="font-semibold text-slate-900">
                       {speech.coFounder.name}
                     </div>
@@ -623,7 +613,6 @@ const SpeechSection = () => {
                   </div>
                 </Card>
 
-                {/* TAB DI BAWAH FOTO */}
                 <TabsList className="mt-6 bg-slate-200 rounded-full p-1 w-full">
                   <TabsTrigger
                     value="founder"
@@ -643,7 +632,6 @@ const SpeechSection = () => {
               <div className="lg:col-span-8">
                 <Card className="rounded-3xl shadow-lg border-0">
                   <div className="p-10">
-
                     <div className="flex items-center gap-3 mb-6">
                       <div className="h-11 w-11 rounded-2xl bg-[#2F6BFF]/10 flex items-center justify-center">
                         <Heart className="h-5 w-5 text-[#2F6BFF]" />
@@ -664,7 +652,6 @@ const SpeechSection = () => {
                       {speech.coFounder.message}
                     </div>
 
-                    {/* CTA DI DALAM CARD */}
                     <div className="rounded-2xl bg-gradient-to-r from-[#2F6BFF] to-[#2557DA] p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6">
                       <div>
                         <h3 className="text-base sm:text-lg font-semibold">
@@ -684,13 +671,11 @@ const SpeechSection = () => {
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </div>
-
                   </div>
                 </Card>
               </div>
             </div>
           </TabsContent>
-
         </Tabs>
       </Container>
     </section>
@@ -708,17 +693,22 @@ const VisionMission = () => {
                 Visi & Misi
               </h2>
               <p className="mt-4 text-slate-600 leading-relaxed">
-                Bagian ini menjelaskan arah dan tujuan komunitas, meliputi visi yang ingin dicapai serta misi sebagai langkah strategis untuk mewujudkannya.
+                Arah dan tujuan komunitas, meliputi visi yang ingin dicapai
+                serta misi sebagai langkah strategis untuk mewujudkannya.
               </p>
 
-            <Card className="mt-7 rounded-3xl border-slate-200 shadow-sm transition-all duration-300 hover:bg-[#2F6BFF] hover:text-white hover:shadow-lg group">
-              <div className="p-7">
-                <div className="text-sm text-slate-500 group-hover:text-white/80">Visi</div>
-                <div className="mt-2 text-lg font-semibold text-slate-900 leading-snug group-hover:text-white">
-                  Menjadi komunitas penggerak bagi generasi muda dan UMKM untuk tumbuh, berinovasi, berkelanjutan dan bersaing di tingkat global.
+              <Card className="mt-7 rounded-3xl border-slate-200 shadow-sm transition-all duration-300 hover:bg-[#2F6BFF] hover:text-white hover:shadow-lg group">
+                <div className="p-7">
+                  <div className="text-sm text-slate-500 group-hover:text-white/80">
+                    Visi
+                  </div>
+                  <div className="mt-2 text-lg font-semibold text-slate-900 leading-snug group-hover:text-white">
+                    Sebagai wadah untuk terwujudnya UMKM dan generasi muda yang
+                    berkembang secara inovatif, berkelanjutan serta memiliki
+                    daya saing global.
+                  </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
             </div>
           </div>
 
@@ -739,16 +729,16 @@ const VisionMission = () => {
                     >
                       <div className="p-6">
                         <div className="flex items-start gap-4">
-                        <div className="h-11 w-11 rounded-2xl bg-[#2F6BFF]/10 ring-1 ring-[#2F6BFF]/15 flex items-center justify-center shrink-0 group-hover:bg-white/20">
-                          <Icon className="h-5 w-5 text-[#2F6BFF] group-hover:text-white" />
-                        </div>
+                          <div className="h-11 w-11 rounded-2xl bg-[#2F6BFF]/10 ring-1 ring-[#2F6BFF]/15 flex items-center justify-center shrink-0 group-hover:bg-white/20">
+                            <Icon className="h-5 w-5 text-[#2F6BFF] group-hover:text-white" />
+                          </div>
                           <div>
-                          <div className="font-semibold text-slate-900 group-hover:text-white">
-                            {m.title}
-                          </div>
-                          <div className="mt-2 text-sm text-slate-600 leading-relaxed group-hover:text-white/90">
-                            {m.description}
-                          </div>
+                            <div className="font-semibold text-slate-900 group-hover:text-white">
+                              {m.title}
+                            </div>
+                            <div className="mt-2 text-sm text-slate-600 leading-relaxed group-hover:text-white/90">
+                              {m.description}
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -767,7 +757,6 @@ const VisionMission = () => {
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // PAGINATION
   const [currentPage, setCurrentPage] = useState(1);
   const imagesPerPage = 6;
 
@@ -775,13 +764,12 @@ const Gallery = () => {
 
   const paginatedImages = galleryImages.slice(
     (currentPage - 1) * imagesPerPage,
-    currentPage * imagesPerPage
+    currentPage * imagesPerPage,
   );
 
   return (
     <section id="gallery" className="py-20 sm:py-24 bg-white/80">
       <Container>
-        {/* HEADER */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <div>
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
@@ -793,7 +781,6 @@ const Gallery = () => {
           </div>
         </div>
 
-        {/* GRID */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {paginatedImages.map((item, idx) => (
             <Card
@@ -802,20 +789,19 @@ const Gallery = () => {
               className="cursor-pointer group relative rounded-2xl overflow-hidden border-slate-200 shadow-sm hover:shadow-lg transition-all duration-500"
             >
               <AspectRatio ratio={4 / 3}>
-              <img
-                src={item.src}
-                alt={item.alt}
-                className="h-full w-full object-cover 
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="h-full w-full object-cover 
                 grayscale group-hover:grayscale-0
                 transition-all duration-700 
                 group-hover:scale-105"
-              />
+                />
               </AspectRatio>
             </Card>
           ))}
         </div>
 
-        {/* PAGINATION */}
         {totalPages > 1 && (
           <div className="mt-12 flex justify-center items-center gap-4">
             <Button
@@ -823,7 +809,7 @@ const Gallery = () => {
               disabled={currentPage === 1}
               onClick={() => setCurrentPage((prev) => prev - 1)}
             >
-              ⬅️
+              ◀
             </Button>
 
             <span className="text-sm text-slate-600">
@@ -835,13 +821,12 @@ const Gallery = () => {
               disabled={currentPage === totalPages}
               onClick={() => setCurrentPage((prev) => prev + 1)}
             >
-              ➡️
+              ▶
             </Button>
           </div>
         )}
       </Container>
 
-      {/* MODAL */}
       <Dialog
         open={!!selectedImage}
         onOpenChange={() => setSelectedImage(null)}
@@ -877,8 +862,6 @@ const InstagramSection = () => {
       className="py-20 sm:py-24 bg-cover bg-center relative"
       style={{ backgroundImage: `url(${bgIgSection})` }}
     >
-
-      {/* overlay */}
       <div className="absolute inset-0 bg-white/80"></div>
 
       <Container className="relative">
@@ -898,12 +881,20 @@ const InstagramSection = () => {
               </div>
 
               <p className="mt-4 text-slate-600 leading-relaxed">
-                Follow untuk update kegiatan, informasi, dan dokumentasi terbaru.
+                Follow untuk update kegiatan, informasi, dan dokumentasi
+                terbaru.
               </p>
 
               <div className="mt-6">
-                <Button asChild className="bg-[#2F6BFF] hover:bg-[#2557DA] text-white">
-                  <a href={brand.instagram.url} target="_blank" rel="noreferrer">
+                <Button
+                  asChild
+                  className="bg-[#2F6BFF] hover:bg-[#2557DA] text-white"
+                >
+                  <a
+                    href={brand.instagram.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Buka Instagram
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
@@ -954,12 +945,16 @@ const CTA = () => {
                 Tertarik berkolaborasi dengan kami?
               </h2>
               <p className="mt-4 text-white/80 max-w-2xl">
-                Cening Community terbuka untuk kolaborasi proyek hingga pendanaan. Jangan ragu untuk menghubungi kami jika Anda tertarik bekerja sama atau memiliki pertanyaan lebih lanjut!
+                Cening Community terbuka untuk kolaborasi proyek hingga
+                pendanaan. Jangan ragu untuk menghubungi kami jika Anda tertarik
+                bekerja sama atau memiliki pertanyaan lebih lanjut!
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Button
                   size="lg"
-                  onClick={() => openWhatsApp(brand.whatsapp.phone, brand.whatsapp.prefilled)}
+                  onClick={() =>
+                    openWhatsApp(brand.whatsapp.phone, brand.whatsapp.prefilled)
+                  }
                   className="bg-[#2F6BFF] hover:bg-[#2557DA] text-white shadow-xl shadow-[#2F6BFF]/20"
                 >
                   Hubungi Kami
@@ -1010,7 +1005,7 @@ const Footer = () => {
       { label: "Galeri", id: "gallery" },
       { label: "Kontak", id: "contact" },
     ],
-    []
+    [],
   );
 
   return (
@@ -1020,19 +1015,18 @@ const Footer = () => {
           <div className="md:col-span-5">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-2xl bg-white/10 ring-1 ring-white/15 flex items-center justify-center overflow-hidden">
-                <img
-                  src={logo}
-                  alt="Logo"
-                  className="h-8 w-8 object-contain"
-                />
+                <img src={logo} alt="Logo" className="h-8 w-8 object-contain" />
               </div>
               <div>
                 <div className="font-semibold tracking-tight">{brand.name}</div>
-                <div className="text-xs text-white/70">Community • Youth • Impact</div>
+                <div className="text-xs text-white/70">
+                  Community • Youth • Impact
+                </div>
               </div>
             </div>
             <p className="mt-4 text-sm text-white/75 leading-relaxed max-w-md">
-              Website community profile untuk menampilkan konsep, kegiatan, dan cara berkolaborasi dengan komunitas.
+              Website community profile untuk menampilkan konsep, kegiatan, dan
+              cara berkolaborasi dengan komunitas.
             </p>
           </div>
 
@@ -1059,7 +1053,7 @@ const Footer = () => {
               </a>
               <a
                 href={`https://wa.me/${brand.whatsapp.phone}?text=${encodeURIComponent(
-                  brand.whatsapp.prefilled
+                  brand.whatsapp.prefilled,
                 )}`}
                 target="_blank"
                 rel="noreferrer"
@@ -1082,7 +1076,8 @@ const Footer = () => {
         <Separator className="my-10 bg-white/10" />
 
         <div className="text-xs text-white/60">
-          © 2026 {brand.name}. All Rights Reserve - Made by Kadek Bintang Januarta
+          © 2026 {brand.name}. All Rights Reserve - Made by Kadek Bintang
+          Januarta
         </div>
       </Container>
     </footer>
@@ -1093,22 +1088,20 @@ export default function HomePage() {
   useRevealOnScroll();
   const activeId = useActiveSection(navLinks.map((l) => l.id));
 
-  // Ensures anchor offsets feel right with sticky header
   const topPadRef = useRef(null);
   useEffect(() => {
     if (!topPadRef.current) return;
-    // no-op, reserved for future adjustments
   }, []);
 
   return (
-      <div
-        className="min-h-screen"
-        style={{
-          backgroundImage: `url(${background})`,
-          backgroundRepeat: "repeat",
-          backgroundSize: "auto",
-        }}
-      >
+    <div
+      className="min-h-screen"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundRepeat: "repeat",
+        backgroundSize: "auto",
+      }}
+    >
       <div ref={topPadRef} />
       <SiteNav activeId={activeId} />
       <main>
@@ -1122,7 +1115,11 @@ export default function HomePage() {
       </main>
       <Footer />
 
-      <WhatsAppFloat phone={brand.whatsapp.phone} message={brand.whatsapp.prefilled} onOpen={openWhatsApp} />
+      <WhatsAppFloat
+        phone={brand.whatsapp.phone}
+        message={brand.whatsapp.prefilled}
+        onOpen={openWhatsApp}
+      />
     </div>
   );
 }
