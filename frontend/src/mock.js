@@ -20,6 +20,11 @@ import kegiatan15 from "./assets/kegiatan15.jpg";
 import kegiatan16 from "./assets/kegiatan16.jpg";
 import kegiatan17 from "./assets/kegiatan17.jpg";
 import kegiatan18 from "./assets/kegiatan18.jpg";
+import kegiatan19 from "./assets/kegiatan19.jpeg";
+import kegiatan20 from "./assets/kegiatan20.jpeg";
+import kegiatan21 from "./assets/kegiatan21.jpeg";
+import kegiatan22 from "./assets/kegiatan22.jpeg";
+import kegiatan23 from "./assets/kegiatan23.jpeg";
 import instagram1 from "./assets/ourMascot.jpg";
 import instagram2 from "./assets/ourIdea.jpg";
 import instagram3 from "./assets/ourLogo.jpg";
@@ -157,16 +162,46 @@ export const galleryImages = [
       "[19 Juli 2024] Kegiatan ini merupakan program pembelajaran yang ditujukan bagi siswa SD kelas 1–3 dengan fokus pada penguatan kemampuan dasar matematika serta pengenalan literasi keuangan sejak dini. Anak-anak diajak memahami pentingnya mengatur uang jajan dengan bijak. Melalui pendekatan yang interaktif dan menyenangkan seperti permainan, simulasi belanja, serta cerita edukatif, siswa belajar membedakan antara kebutuhan dan keinginan, serta memahami konsep menabung untuk mencapai tujuan tertentu.",
   },
   {
+    src: kegiatan17,
+    alt: "Cening Care #4",
+    longDescription:
+      "[20 Desember 2024] Kegiatan ini menyasar UMKM Rumah Makan Bali yang merupakan proses pengumpulan data langsung dari pelaku UMKM guna mengidentifikasi pola pengelolaan keuangan usaha yang sedang berjalan. Melalui wawancara terstruktur dan observasi singkat, tim mengevaluasi bagaimana pelaku usaha mencatat transaksi harian, mengelola arus kas, serta menghitung keuntungan usaha.",
+  },
+    {
     src: kegiatan18,
     alt: "Kelas Ceria #2",
     longDescription:
       "[29 Oktober 2025] Dalam kegiatan ini, anak-anak diajak memahami konsep matematika dasar seperti operasi hitung sederhana dan pengenalan nilai mata uang melalui simulasi situasi nyata, seperti aktivitas jual-beli dan pengelolaan uang jajan. Selain penguatan numerasi, siswa juga dikenalkan pada prinsip dasar pengelolaan keuangan sederhana. Mereka belajar menyisihkan sebagian uang jajan untuk ditabung, memahami arti prioritas, serta membangun kebiasaan membuat keputusan yang bijak sebelum membeli sesuatu.",
   },
-  {
-    src: kegiatan17,
-    alt: "Cening Care #4",
+      {
+    src: kegiatan19,
+    alt: "Buwana Farm - Perternakan Ayam lebih dari 13.000 ekor - Dramaga - Bogor Regency",
     longDescription:
-      "[20 Desember 2024] Kegiatan ini menyasar UMKM Rumah Makan Bali yang merupakan proses pengumpulan data langsung dari pelaku UMKM guna mengidentifikasi pola pengelolaan keuangan usaha yang sedang berjalan. Melalui wawancara terstruktur dan observasi singkat, tim mengevaluasi bagaimana pelaku usaha mencatat transaksi harian, mengelola arus kas, serta menghitung keuntungan usaha.",
+      "[13 Januari 2026] Turun Lapang buat pemahaman terkait manajemen kompensasi yang terjadi di dalam Buwana Farm.",
+  },
+      {
+    src: kegiatan20,
+    alt: "Haus Korea Cafe - Dramaga - Bogor Regency",
+    longDescription:
+      "[25 Januari 2026] Dalam kegiatan ini, anak-anak diajak memahami konsep matematika dasar seperti operasi hitung sederhana dan pengenalan nilai mata uang melalui simulasi situasi nyata, seperti aktivitas jual-beli dan pengelolaan uang jajan. Selain penguatan numerasi, siswa juga dikenalkan pada prinsip dasar pengelolaan keuangan sederhana. Mereka belajar menyisihkan sebagian uang jajan untuk ditabung, memahami arti prioritas, serta membangun kebiasaan membuat keputusan yang bijak sebelum membeli sesuatu.",
+  },
+        {
+    src: kegiatan21,
+    alt: "Zama House Cafe - Dramaga - Bogor Regency",
+    longDescription:
+      "[29 April 2026] Turun Lapang buat membahas internal dan eksternal Zama House.",
+  },
+        {
+    src: kegiatan22,
+    alt: "Funsioner",
+    longDescription:
+      "[10 Februari 2026] Funsioner 5.0 adalah kegiatan mentoring kewirausahaan yang dilaksakan oleh komunitas Fiksioner Indonesia. kegiatan ini bertujuan untuk  pemberdayaan kewirausahaan di kalangan anak muda. Selain itu mendapat mentoring terkit bagaimana membangun usaha, membentuk mental serta pengelolaan usaha yang sudah berjalan, terdapat pula Funtrip diamana melakukan kunjungan ke pabrik Aqua dan Rumah Tempe Indonesia.",
+  },
+        {
+    src: kegiatan23,
+    alt: "Ngobrolin Cuan Bareng",
+    longDescription:
+      "[22 Maret 2025] Telah dilaksanakan kegiatan sharing dan belajar bersama yang bertempat di Bali dengan melibatkan anak-anak dari Kabupaten Gianyar, Kabupaten Karangasem, Kabupaten  Buleleng, Kabupaten Denpasar, dan Kabupaten Tabanan. Kegiatan ini berfokus pada edukasi pengelolaan keuangan dari bisnis yang mereka jalankan, mulai dari cara mengatur pemasukan dan pengeluaran, memahami pentingnya menabung, hingga membangun kebiasaan finansial yang lebih bijak. Melalui suasana belajar yang interaktif dan kolaboratif, peserta diajak untuk saling berbagi pengalaman serta meningkatkan pemahaman mengenai pengelolaan uang dalam kegiatan usaha mereka.",
   },
 ];
 
